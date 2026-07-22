@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate Gear — Replay Gear</title>
+<meta name="description" content="Drop off, ship, or schedule a pickup. Every donated item is logged, sorted, and back in a kid's hands within weeks.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230A1622%22/><ellipse cx=%2250%22 cy=%2250%22 rx=%2232%22 ry=%2220%22 fill=%22%23C9D3DC%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-glow"></div>
+
+<nav>
+  <a class="logo" href="index.html"><span class="dot"></span>REPLAY GEAR</a>
+  <div class="navlinks">
+    <a href="story.html">Our Story</a>
+    <a href="team.html">Meet the Team</a>
+    <a href="how-it-works.html">How it Works</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="impact.html">Impact</a>
+    <a href="faq.html">FAQ</a>
+    <a href="donate-gear.html" aria-current="page">Donate Gear</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="donate.html">Donate</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="story.html">Our Story</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="impact.html">Impact</a>
+  <a href="faq.html">FAQ</a>
+  <a href="donate-gear.html" aria-current="page">Donate Gear</a>
+  <a class="nav-cta" href="donate.html">Donate</a>
+</div>
+
+<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+
+<main>
+  <section class="cta" style="padding-top:100px;">
+    <a class="back-home" href="index.html">← Back to the field</a>
+    <div class="hero-eyebrow">Donate Gear</div>
+    <h2>Your old <em class="chrome-text">gear</em> is someone's<br>first <em style="color:var(--accent);">chance.</em></h2>
+    <p>Drop off, ship, or schedule a pickup. Every donated item is logged, sorted, and back in a kid's hands within weeks. Prefer to give money instead? <a href="donate.html" style="color:var(--accent);">Go here.</a></p>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="quarters">
+      <div class="tilt-card"><div class="tilt-glow"></div>
+        <div class="quarter-tag">WHAT WE TAKE</div>
+        <h3>Gear That's Still In The Game</h3>
+        <p>Cleats, helmets, pads, bags, jerseys — football, soccer, basketball, baseball, and track. Clean and safe to play in. Not sure? Send a photo and we'll let you know.</p>
+      </div>
+      <div class="tilt-card"><div class="tilt-glow"></div>
+        <div class="quarter-tag">DROP IT OFF</div>
+        <h3>Local Drop-Off</h3>
+        <p>Bring gear to our next collection drive, or arrange a curbside pickup like Gear Drive #1 — just reach out to schedule.</p>
+      </div>
+      <div class="tilt-card"><div class="tilt-glow"></div>
+        <div class="quarter-tag">SHIP IT IN</div>
+        <h3>Mail It To Us</h3>
+        <p>Outside our local area? Reach out and we'll send shipping instructions so your gear can still make it into the relay.</p>
+      </div>
+    </div>
+
+    <div class="donate-panel" style="margin-top:56px;">
+      <div class="donate-field">
+        <label>Ready to give gear?</label>
+        <p style="font-size:14px; line-height:1.7; opacity:.8; margin-top:6px;">
+          Contact us to schedule a drop-off, pickup, or shipping label — <span style="color:var(--accent); font-family:var(--mono); font-size:12.5px;">[contact email/phone coming soon]</span>.
+        </p>
+      </div>
+      <div class="hero-actions" style="justify-content:flex-start; margin-top:10px;">
+        <a class="btn btn-primary" href="get-involved.html">Other Ways to Help →</a>
+        <a class="btn btn-ghost" href="faq.html">Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div class="seal" aria-hidden="true">
+      <div class="seal-inner">
+        <div class="seal-face front"><span class="check">✓</span></div>
+        <div class="seal-face back"><span>TRUSTED<br>501(C)(3)</span></div>
+      </div>
+    </div>
+    <span>Replay Gear · 501(c)(3) via fiscal sponsorship · EIN 81-2908499</span>
+  </div>
+  <span>Give Gear. Fuel Dreams.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

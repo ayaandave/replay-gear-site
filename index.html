@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Replay Gear — Give Gear. Fuel Dreams.</title>
+<meta name="description" content="Replay Gear collects gently used youth sports equipment and puts it back in the game — outfitting underserved young athletes so every kid gets their shot.">
+<meta property="og:title" content="Replay Gear — Give Gear. Fuel Dreams.">
+<meta property="og:description" content="We collect gently used sports gear and redistribute it to underserved youth athletes, at no cost to families.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230A1622%22/><ellipse cx=%2250%22 cy=%2250%22 rx=%2232%22 ry=%2220%22 fill=%22%23C9D3DC%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-glow"></div>
+
+<nav>
+  <a class="logo" href="index.html"><span class="dot"></span>REPLAY GEAR</a>
+  <div class="navlinks">
+    <a href="story.html">Our Story</a>
+    <a href="team.html">Meet the Team</a>
+    <a href="how-it-works.html">How it Works</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="impact.html">Impact</a>
+    <a href="faq.html">FAQ</a>
+    <a href="donate-gear.html">Donate Gear</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="donate.html">Donate</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="story.html">Our Story</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="impact.html">Impact</a>
+  <a href="faq.html">FAQ</a>
+    <a href="donate-gear.html">Donate Gear</a>
+  <a class="nav-cta" href="donate.html">Donate</a>
+</div>
+
+<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="hero-eyebrow">Youth Sports Access</div>
+    <div class="flap-line chrome-text" id="flap1"></div>
+    <div class="flap-line" id="flap2" style="color:var(--accent);"></div>
+    <p class="hero-sub">We collect gently used sports gear and put it back in the game — outfitting underserved youth athletes so every kid gets their shot, not just the ones who can afford one.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="donate.html">Donate Now →</a>
+      <a class="btn btn-ghost" href="#field">Run the Drive ↓</a>
+    </div>
+    <div class="badge-wrap" aria-hidden="true">
+      <div class="badge-coin">
+        <div class="badge-coin-inner">
+          <div class="badge-face front">
+            <span class="rg">RG</span>
+            <span class="mono">501(C)(3)</span>
+          </div>
+          <div class="badge-face back">
+            <div class="laces"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="field-section" id="field">
+    <div class="field-header">
+      <div class="field-title">Run the Drive</div>
+      <div class="field-note">Click a yard line to move down the field — this is the whole site</div>
+    </div>
+    <div class="field-wrap" id="fieldWrap">
+      <div class="field" id="field-el">
+        <div class="field-scanline"></div>
+        <button class="endzone top" data-target="#hero">Kickoff</button>
+
+        <button class="zone" style="top:13%" data-href="story.html"><span class="zone-label"><span class="yard">15</span> · OUR STORY</span></button>
+        <button class="zone" style="top:27%" data-href="team.html"><span class="zone-label"><span class="yard">28</span> · MEET THE TEAM</span></button>
+        <button class="zone" style="top:41%" data-href="how-it-works.html"><span class="zone-label"><span class="yard">42</span> · HOW IT WORKS</span></button>
+        <button class="zone" style="top:55%" data-href="get-involved.html"><span class="zone-label"><span class="yard">56</span> · GET INVOLVED</span></button>
+        <button class="zone" style="top:69%" data-href="impact.html"><span class="zone-label"><span class="yard">70</span> · IMPACT</span></button>
+        <button class="zone" style="top:83%" data-href="faq.html"><span class="zone-label"><span class="yard">84</span> · FAQ</span></button>
+
+        <button class="endzone bottom" data-href="donate.html">Goal — Donate</button>
+        <div class="ball" id="ball" style="top:6%;"></div>
+      </div>
+    </div>
+    <div class="field-hud">
+      <span>DRIVE STATUS: SELECT A ZONE</span>
+      <span id="hudTarget">TARGET: —</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div class="seal" aria-hidden="true">
+      <div class="seal-inner">
+        <div class="seal-face front"><span class="check">✓</span></div>
+        <div class="seal-face back"><span>TRUSTED<br>501(C)(3)</span></div>
+      </div>
+    </div>
+    <span>Replay Gear · 501(c)(3) via fiscal sponsorship · EIN 81-2908499</span>
+  </div>
+  <span>Give Gear. Fuel Dreams.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Involved — Replay Gear</title>
+<meta name="description" content="Join the roster: volunteer, host a gear drive, become a corporate partner, or spread the word.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230A1622%22/><ellipse cx=%2250%22 cy=%2250%22 rx=%2232%22 ry=%2220%22 fill=%22%23C9D3DC%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-glow"></div>
+
+<nav>
+  <a class="logo" href="index.html"><span class="dot"></span>REPLAY GEAR</a>
+  <div class="navlinks">
+    <a href="story.html">Our Story</a>
+    <a href="team.html">Meet the Team</a>
+    <a href="how-it-works.html">How it Works</a>
+    <a href="get-involved.html" aria-current="page">Get Involved</a>
+    <a href="impact.html">Impact</a>
+    <a href="faq.html">FAQ</a>
+    <a href="donate-gear.html">Donate Gear</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="donate.html">Donate</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="story.html">Our Story</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="get-involved.html" aria-current="page">Get Involved</a>
+  <a href="impact.html">Impact</a>
+  <a href="faq.html">FAQ</a>
+    <a href="donate-gear.html">Donate Gear</a>
+  <a class="nav-cta" href="donate.html">Donate</a>
+</div>
+
+<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+
+<main>
+  <section class="page-header">
+    <a class="back-home" href="index.html">← Back to the field</a>
+    <div class="hero-eyebrow">56 · Get Involved</div>
+    <h1 class="chrome-text">Join The Roster</h1>
+    <p>Ways to get in the game — click a card to see the play.</p>
+  </section>
+
+  <section class="section">
+    <div class="roster">
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="flip-card-inner">
+          <div class="flip-face front">
+            <div class="quarter-tag">SIDELINE CREW</div>
+            <h3>Volunteer</h3>
+            <p>Help sort, clean, and pack gear at a monthly drive.</p>
+            <div class="flip-hint">Tap to flip →</div>
+          </div>
+          <div class="flip-face back">
+            <div>
+              <div class="quarter-tag">SIDELINE CREW</div>
+              <h3>Volunteer</h3>
+              <p>No experience needed — just hands. Drives run monthly, evenings and weekends, roughly two hours each.</p>
+            </div>
+            <a class="roster-cta" href="donate.html">Sign Up →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="flip-card-inner">
+          <div class="flip-face front">
+            <div class="quarter-tag">TEAM CAPTAIN</div>
+            <h3>Host a Drive</h3>
+            <p>Run a collection at your school, gym, or workplace.</p>
+            <div class="flip-hint">Tap to flip →</div>
+          </div>
+          <div class="flip-face back">
+            <div>
+              <div class="quarter-tag">TEAM CAPTAIN</div>
+              <h3>Host a Drive</h3>
+              <p>We'll send a starter kit — bins, signage, and a promo template — so you can run a drive in your community.</p>
+            </div>
+            <a class="roster-cta" href="donate.html">Get the Kit →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="flip-card-inner">
+          <div class="flip-face front">
+            <div class="quarter-tag">FRANCHISE PARTNER</div>
+            <h3>Corporate Partner</h3>
+            <p>Sponsor a season or match employee donations.</p>
+            <div class="flip-hint">Tap to flip →</div>
+          </div>
+          <div class="flip-face back">
+            <div>
+              <div class="quarter-tag">FRANCHISE PARTNER</div>
+              <h3>Corporate Partner</h3>
+              <p>Become a permanent drop-off site, sponsor a season of gear restoration, or match employee giving dollar-for-dollar.</p>
+            </div>
+            <a class="roster-cta" href="donate.html">Partner With Us →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="flip-card-inner">
+          <div class="flip-face front">
+            <div class="quarter-tag">HYPE SQUAD</div>
+            <h3>Spread the Word</h3>
+            <p>Follow, share, and tag a program near you.</p>
+            <div class="flip-hint">Tap to flip →</div>
+          </div>
+          <div class="flip-face back">
+            <div>
+              <div class="quarter-tag">HYPE SQUAD</div>
+              <h3>Spread the Word</h3>
+              <p>Word of mouth is half our playbook. Share a drive with your team, league, or neighborhood group.</p>
+            </div>
+            <a class="roster-cta" href="donate.html">Follow Along →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div class="seal" aria-hidden="true">
+      <div class="seal-inner">
+        <div class="seal-face front"><span class="check">✓</span></div>
+        <div class="seal-face back"><span>TRUSTED<br>501(C)(3)</span></div>
+      </div>
+    </div>
+    <span>Replay Gear · 501(c)(3) via fiscal sponsorship · EIN 81-2908499</span>
+  </div>
+  <span>Give Gear. Fuel Dreams.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

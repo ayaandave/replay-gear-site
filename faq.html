@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Replay Gear</title>
+<meta name="description" content="The Playbook: frequently asked questions about donating and receiving gear through Replay Gear.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230A1622%22/><ellipse cx=%2250%22 cy=%2250%22 rx=%2232%22 ry=%2220%22 fill=%22%23C9D3DC%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-glow"></div>
+
+<nav>
+  <a class="logo" href="index.html"><span class="dot"></span>REPLAY GEAR</a>
+  <div class="navlinks">
+    <a href="story.html">Our Story</a>
+    <a href="team.html">Meet the Team</a>
+    <a href="how-it-works.html">How it Works</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="impact.html">Impact</a>
+    <a href="faq.html" aria-current="page">FAQ</a>
+    <a href="donate-gear.html">Donate Gear</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="donate.html">Donate</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="story.html">Our Story</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="impact.html">Impact</a>
+  <a href="faq.html" aria-current="page">FAQ</a>
+    <a href="donate-gear.html">Donate Gear</a>
+  <a class="nav-cta" href="donate.html">Donate</a>
+</div>
+
+<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+
+<main>
+  <section class="page-header">
+    <a class="back-home" href="index.html">← Back to the field</a>
+    <div class="hero-eyebrow">84 · FAQ</div>
+    <h1 class="chrome-text">The Playbook</h1>
+    <p>Frequently asked questions.</p>
+  </section>
+
+  <section class="section">
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span><span class="num">01</span>What gear do you accept?</span><span class="chevron">+</span></button>
+        <div class="faq-a"><p>Cleats, helmets, pads, bags, jerseys, and most equipment for football, soccer, basketball, baseball, and track — as long as it's clean and still safe to play in. If you're not sure, send a photo and we'll let you know.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span><span class="num">02</span>Is my donation tax-deductible?</span><span class="chevron">+</span></button>
+        <div class="faq-a"><p>Yes. Replay Gear operates as a 501(c)(3) through fiscal sponsorship, and you'll receive a donation receipt for gear and monetary gifts alike.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span><span class="num">03</span>How do you decide which athletes receive gear?</span><span class="chevron">+</span></button>
+        <div class="faq-a"><p>We work through partner schools, rec leagues, and community programs who identify need directly — we never require families to prove income or fill out paperwork to receive gear.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span><span class="num">04</span>Where does Replay Gear operate?</span><span class="chevron">+</span></button>
+        <div class="faq-a"><p>We currently partner with 36 organizations across our home region, with drop-off sites growing every season. Reach out if you'd like to bring a drive to your community.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span><span class="num">05</span>Can I donate money instead of gear?</span><span class="chevron">+</span></button>
+        <div class="faq-a"><p>Absolutely — cash donations cover cleaning, safety inspection, and shipping costs, which stretch every donated item further. Use the donate page to give either way.</p></div>
+      </div>
+    </div>
+    <div class="hero-actions" style="justify-content:flex-start; margin-top:48px;">
+      <a class="btn btn-primary" href="donate.html">Donate Now →</a>
+      <a class="btn btn-ghost" href="get-involved.html">Other Ways to Help</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div class="seal" aria-hidden="true">
+      <div class="seal-inner">
+        <div class="seal-face front"><span class="check">✓</span></div>
+        <div class="seal-face back"><span>TRUSTED<br>501(C)(3)</span></div>
+      </div>
+    </div>
+    <span>Replay Gear · 501(c)(3) via fiscal sponsorship · EIN 81-2908499</span>
+  </div>
+  <span>Give Gear. Fuel Dreams.</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
