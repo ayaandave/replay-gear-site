@@ -259,7 +259,8 @@ footer .seal-face .check{ font-size:11px; }
 .section-note{ font-family:var(--mono); font-size:12px; letter-spacing:1.5px; opacity:.5; text-transform:uppercase;}
 .section-lead{ max-width:64ch; font-size:15px; line-height:1.8; opacity:.7; }
 
-.quarters, .roster{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.quarters{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.quarters.three-up{ grid-template-columns:repeat(3,1fr); max-width:900px; margin:0 auto; }
 .tilt-card{
   position:relative; background:var(--panel); border:1px solid var(--line); border-radius:8px;
   padding:30px 22px; overflow:hidden; backdrop-filter:blur(8px);
@@ -275,9 +276,8 @@ footer .seal-face .check{ font-size:11px; }
 .quarter-tag{ font-family:var(--mono); font-size:11px; color:var(--accent); letter-spacing:2px; position:relative;}
 .tilt-card h3{ font-family:var(--display); font-weight:700; font-size:21px; text-transform:uppercase; margin:14px 0 10px; position:relative;}
 .tilt-card p{ font-size:13.5px; line-height:1.6; opacity:.65; position:relative;}
-.tilt-card .roster-cta{ display:inline-block; margin-top:16px; font-family:var(--mono); font-size:11px; letter-spacing:1.5px; color:var(--accent); position:relative; text-transform:uppercase; }
-@media (max-width:900px){ .quarters, .roster{grid-template-columns:repeat(2,1fr);} }
-@media (max-width:520px){ .quarters, .roster{grid-template-columns:1fr;} }
+@media (max-width:900px){ .quarters{grid-template-columns:repeat(2,1fr);} .quarters.three-up{grid-template-columns:repeat(2,1fr); max-width:600px;} }
+@media (max-width:520px){ .quarters{grid-template-columns:1fr;} .quarters.three-up{grid-template-columns:1fr; max-width:320px;} }
 
 /* ---------- TRADING CARDS (Verified Moments) ---------- */
 .card-series{ margin-top:70px; }
@@ -292,24 +292,35 @@ footer .seal-face .check{ font-size:11px; }
 
 .trading-card{ position:relative; perspective:1200px; }
 .trading-card-inner{
-  position:relative; border-radius:15px; padding:3px;
+  position:relative; border-radius:18px; padding:9px;
   background:conic-gradient(from 140deg, var(--chrome-2), var(--chrome-1) 25%, var(--chrome-3) 50%, var(--chrome-1) 75%, var(--chrome-2));
   box-shadow:0 25px 55px rgba(0,0,0,.55), 0 0 0 1px rgba(0,0,0,.4);
   transform-style:preserve-3d; will-change:transform; transition:transform .12s ease-out, box-shadow .2s;
 }
-.trading-card:hover .trading-card-inner{ box-shadow:0 30px 70px rgba(0,0,0,.6), 0 0 26px rgba(61,139,255,.25); }
-.trading-card-face{ background:var(--navy2); border-radius:12px; overflow:hidden; }
+.trading-card:hover .trading-card-inner{ box-shadow:0 30px 70px rgba(0,0,0,.6), 0 0 30px rgba(61,139,255,.3); }
+.trading-card-face{
+  position:relative; background:var(--navy2); border-radius:11px; overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.3), inset 0 0 0 3px rgba(5,9,13,.55);
+}
+/* holo foil sheen sweeping the full card on hover */
+.trading-card-face::before{
+  content:''; position:absolute; inset:0; z-index:3; pointer-events:none; opacity:0; transition:opacity .25s;
+  background:linear-gradient(115deg, transparent 30%, rgba(255,80,180,.18) 42%, rgba(120,180,255,.22) 50%, rgba(255,220,120,.18) 58%, transparent 70%);
+  background-size:250% 250%; background-position:0% 0%;
+  mix-blend-mode:screen;
+}
+.trading-card:hover .trading-card-face::before{ opacity:1; background-position:100% 100%; transition:opacity .25s, background-position 1s ease; }
 
 .card-label-bar{
   display:flex; align-items:center; justify-content:space-between; gap:8px;
-  padding:8px 12px; background:linear-gradient(180deg, rgba(5,9,13,.92), rgba(5,9,13,.72));
-  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:7px 12px; background:linear-gradient(115deg, #12233a, #0A1622 55%, #1a3350);
+  border-bottom:1px solid rgba(255,255,255,.12);
 }
-.card-label-bar .brand{ font-family:var(--mono); font-size:8px; letter-spacing:1.5px; color:var(--chrome-1); opacity:.8; }
+.card-label-bar .brand{ font-family:var(--display); font-weight:800; font-size:11px; letter-spacing:1px; color:var(--chrome-2); text-transform:uppercase; }
 .card-label-bar .verified{ font-family:var(--mono); font-size:8px; letter-spacing:1px; color:var(--accent); display:flex; align-items:center; gap:4px; }
 .card-label-bar .verified::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--accent); box-shadow:0 0 6px var(--accent); }
 
-.card-photo-window{ position:relative; aspect-ratio:3/4; overflow:hidden; }
+.card-photo-window{ position:relative; aspect-ratio:3/4; overflow:hidden; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(0,0,0,.4); }
 .card-photo-window img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05) contrast(1.03); }
 .card-photo-window::after{
   content:''; position:absolute; top:0; left:-60%; width:45%; height:100%;
@@ -318,7 +329,7 @@ footer .seal-face .check{ font-size:11px; }
 }
 .trading-card:hover .card-photo-window::after{ left:140%; }
 
-.card-cert-strip{ padding:10px 12px 13px; }
+.card-cert-strip{ padding:10px 12px 13px; background:linear-gradient(180deg, rgba(255,255,255,.02), transparent); }
 .card-cert-strip .serial{ font-family:var(--mono); font-size:9px; letter-spacing:1.2px; color:var(--accent); opacity:.85; text-transform:uppercase; }
 .card-cert-strip .caption{ font-family:var(--body); font-size:12.5px; line-height:1.4; opacity:.85; margin-top:4px; }
 
