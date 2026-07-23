@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230A1622%22/><ellipse cx=%2250%22 cy=%2250%22 rx=%2232%22 ry=%2220%22 fill=%22%23C9D3DC%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -70,6 +70,69 @@
     <div class="hero-actions" style="justify-content:flex-start; margin-top:40px;">
       <a class="btn btn-primary" href="how-it-works.html">See How It Works →</a>
       <a class="btn btn-ghost" href="donate-gear.html">Donate Gear</a>
+    </div>
+  </section>
+  <section class="field-section" id="field">
+    <div class="field-header">
+      <div class="field-title">Instant Replay</div>
+      <div class="field-note">Tap a frame to jump there — this is the whole site</div>
+    </div>
+    <div class="reel-wrap" id="fieldWrap">
+      <div class="reel-monitor">
+        <div class="reel-scanline"></div>
+        <div class="reel-topbar">
+          <span class="reel-live"><span class="reel-dot"></span>Replay</span>
+          <span class="reel-timecode" id="reelTimecode">00:00:00:00</span>
+        </div>
+        <div class="reel-strip" id="field-el">
+          <button class="frame" data-href="index.html">
+            <span class="frame-num">01</span>
+            <span class="frame-name">Home</span>
+            <span class="frame-arrow">→</span>
+          </button>
+          <div class="frame current" aria-current="page">
+            <span class="frame-num">02</span>
+            <span class="frame-name">Our Story</span>
+            <span class="frame-here">● Here</span>
+          </div>
+          <button class="frame" data-href="team.html">
+            <span class="frame-num">03</span>
+            <span class="frame-name">Meet the Team</span>
+            <span class="frame-arrow">→</span>
+          </button>
+          <button class="frame" data-href="how-it-works.html">
+            <span class="frame-num">04</span>
+            <span class="frame-name">How It Works</span>
+            <span class="frame-arrow">→</span>
+          </button>
+          <button class="frame" data-href="impact.html">
+            <span class="frame-num">05</span>
+            <span class="frame-name">Impact</span>
+            <span class="frame-arrow">→</span>
+          </button>
+          <button class="frame" data-href="faq.html">
+            <span class="frame-num">06</span>
+            <span class="frame-name">FAQ</span>
+            <span class="frame-arrow">→</span>
+          </button>
+          <button class="frame" data-href="donate-gear.html">
+            <span class="frame-num">07</span>
+            <span class="frame-name">Donate Gear</span>
+            <span class="frame-arrow">→</span>
+          </button>
+          <button class="frame" data-href="donate.html">
+            <span class="frame-num">08</span>
+            <span class="frame-name">Donate</span>
+            <span class="frame-arrow">→</span>
+          </button>
+        </div>
+        <div class="reel-track"><div class="reel-playhead" id="reelPlayhead"></div></div>
+        <div class="reel-perf"></div>
+      </div>
+    </div>
+    <div class="field-hud">
+      <span>REEL STATUS: SELECT A FRAME</span>
+      <span id="hudTarget">TARGET: —</span>
     </div>
   </section>
 </main>

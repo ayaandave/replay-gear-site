@@ -83,8 +83,8 @@ function flapText(el, text){
   const flap1 = document.getElementById('flap1');
   const flap2 = document.getElementById('flap2');
   if(!flap1 || !flap2) return; // not the homepage
-  flapText(flap1, 'GIVE GEAR.');
-  flapText(flap2, 'FUEL DREAMS.');
+  flapText(flap1, 'REPLAY');
+  flapText(flap2, 'GEAR');
 })();
 
 // ---------- Ticker ----------
@@ -113,35 +113,62 @@ if(burger && mobilePanel){
   });
 }
 
-// ---------- Interactive field (now the primary page navigator) ----------
-const zones = document.querySelectorAll('.zone, .endzone');
-const ball = document.getElementById('ball');
+// ---------- Instant Replay reel (primary page navigator) ----------
+const frames = document.querySelectorAll('.frame');
 const hud = document.getElementById('hudTarget');
-zones.forEach(z => {
-  z.addEventListener('mouseenter', () => {
-    if(!ball) return;
-    let topPct = z.classList.contains('endzone') ? (z.classList.contains('top') ? 6 : 94) : parseFloat(z.style.top);
-    ball.style.top = topPct + '%';
-    if(hud) hud.textContent = 'TARGET: ' + (z.querySelector('.zone-label')?.textContent || z.textContent.trim()).toUpperCase();
+const playhead = document.getElementById('reelPlayhead');
+const reelStrip = document.getElementById('field-el');
+
+function movePlayheadTo(frame){
+  if(!playhead || !reelStrip) return;
+  const stripRect = reelStrip.getBoundingClientRect();
+  const frameRect = frame.getBoundingClientRect();
+  const isRow = getComputedStyle(reelStrip).flexDirection !== 'column';
+  if(isRow){
+    const center = frameRect.left - stripRect.left + frameRect.width / 2;
+    playhead.style.left = (center / stripRect.width * 100) + '%';
+    playhead.classList.add('active');
+  } else {
+    playhead.classList.remove('active');
+  }
+}
+
+frames.forEach(f => {
+  f.addEventListener('mouseenter', () => {
+    if(hud){
+      if(f.classList.contains('current')){
+        hud.textContent = 'TARGET: YOU ARE HERE';
+      } else {
+        const name = f.querySelector('.frame-name')?.textContent || f.textContent.trim();
+        hud.textContent = 'TARGET: ' + name.toUpperCase();
+      }
+    }
+    movePlayheadTo(f);
   });
-  z.addEventListener('focus', () => z.dispatchEvent(new Event('mouseenter')));
-  z.addEventListener('click', () => {
-    if(z.dataset.href){ window.location.href = z.dataset.href; return; }
-    const target = document.querySelector(z.dataset.target);
-    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-  });
+  f.addEventListener('focus', () => f.dispatchEvent(new Event('mouseenter')));
+  f.addEventListener('click', () => { if(f.dataset.href) window.location.href = f.dataset.href; });
 });
 
-const fieldWrap = document.getElementById('fieldWrap');
-const field = document.getElementById('field-el');
-if(fieldWrap && field && !REDUCED){
-  fieldWrap.addEventListener('mousemove', (e) => {
-    const r = fieldWrap.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width - 0.5;
-    const py = (e.clientY - r.top) / r.height - 0.5;
-    field.style.transform = `rotateX(${52 - py*8}deg) rotateZ(${px*4}deg)`;
-  });
-  fieldWrap.addEventListener('mouseleave', () => { field.style.transform = 'rotateX(52deg) rotateZ(0deg)'; });
+const reelWrap = document.getElementById('fieldWrap');
+if(reelWrap && playhead){
+  reelWrap.addEventListener('mouseleave', () => playhead.classList.remove('active'));
+}
+
+// ---------- Reel timecode ticker ----------
+const timecodeEl = document.getElementById('reelTimecode');
+if(timecodeEl && !REDUCED){
+  const start = performance.now();
+  const pad = (n, len=2) => String(n).padStart(len, '0');
+  setInterval(() => {
+    const elapsed = performance.now() - start;
+    const totalFrames = Math.floor(elapsed / (1000/24));
+    const ff = totalFrames % 24;
+    const totalSecs = Math.floor(totalFrames / 24);
+    const ss = totalSecs % 60;
+    const mm = Math.floor(totalSecs / 60) % 60;
+    const hh = Math.floor(totalSecs / 3600);
+    timecodeEl.textContent = `${pad(hh)}:${pad(mm)}:${pad(ss)}:${pad(ff)}`;
+  }, 1000/24);
 }
 
 // ---------- Tilt cards (quarter/roster cards + trading cards) ----------
