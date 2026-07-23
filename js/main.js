@@ -78,10 +78,14 @@ function flapText(el, text){
   });
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  flapText(document.getElementById('flap1'), 'GIVE GEAR.');
-  flapText(document.getElementById('flap2'), 'FUEL DREAMS.');
-});
+// ---------- Hero title reveal ----------
+(function heroTitle(){
+  const flap1 = document.getElementById('flap1');
+  const flap2 = document.getElementById('flap2');
+  if(!flap1 || !flap2) return; // not the homepage
+  flapText(flap1, 'GIVE GEAR.');
+  flapText(flap2, 'FUEL DREAMS.');
+})();
 
 // ---------- Ticker ----------
 const stats = ["65 ITEMS DONATED","44 KIDS EQUIPPED","$6,777.60 RAISED","$0 COST TO FAMILIES","$5,000 GIVEN TO AIM FOR SEVA","JUST GETTING STARTED"];
