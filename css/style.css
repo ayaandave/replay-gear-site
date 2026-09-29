@@ -113,6 +113,7 @@ nav{
   display:flex; flex-wrap:wrap; gap:.02em; font-family:var(--display); font-weight:400;
   font-size:clamp(72px, 12vw, 188px); line-height:.8; text-transform:uppercase; letter-spacing:0;
 }
+.hero-title .flap-line + .flap-line{ margin-top:.12em; }
 .flap{ display:inline-block; }
 
 .hero-eyebrow{
